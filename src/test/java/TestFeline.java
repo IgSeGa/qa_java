@@ -22,7 +22,9 @@ public class TestFeline {
 
     @Test
     public void testKittens(){
-        Assert.assertEquals(feline.getKittens(), feline.getKittens());
+        feline.getKittens();
+        Mockito.when(feline.getKittens()).thenReturn(1234567890);
+        Assert.assertEquals(feline.getKittens(),feline.getKittens());
     }
 
     @Test
