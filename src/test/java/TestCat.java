@@ -11,11 +11,11 @@ public class TestCat {
 
     @Test
     public void testSound(){
-        Assert.assertEquals(cat.getSound(), "Мяу");
+        Assert.assertEquals("Мяу", cat.getSound());
     }
 
     @Test
     public void testFood() throws Exception {
-        Assert.assertEquals(cat.getFood(), List.of("Животные", "Птицы", "Рыба"));
+        Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }
 }
