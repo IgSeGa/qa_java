@@ -14,15 +14,15 @@ public class TestLionKittensFood {
     Feline feline;
 
     @Test
-    public void testKittens(){
-        Lion lion = new Lion(feline);
+    public void testKittens() throws Exception {
+        Lion lion = new Lion("Самец", feline);
         Mockito.when(feline.getKittens()).thenReturn(123456789);
-        Assert.assertEquals(lion.getKittens(), feline.getKittens());
+        Assert.assertEquals(feline.getKittens(), lion.getKittens());
     }
 
     @Test
     public void testFood() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion("Самец", feline);
         lion.getFood();
         Mockito.verify(feline).getFood("Хищник");
         Assert.assertEquals(lion.getFood(), feline.getFood("Хищник"));

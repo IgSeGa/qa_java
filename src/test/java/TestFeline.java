@@ -21,8 +21,10 @@ public class TestFeline {
     @Test
     public void testKittens(){
         feline.getKittens();
-        Mockito.when(feline.getKittens()).thenReturn(1234567890);
-        Assert.assertEquals(feline.getKittens(),feline.getKittens());
+        Mockito.verify(feline).getKittens(1);
+        int x = 58542;
+        Mockito.when(feline.getKittens(1)).thenReturn(x);
+        Assert.assertEquals(x, feline.getKittens());
     }
 
     @Test
