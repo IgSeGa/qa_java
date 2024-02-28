@@ -25,6 +25,6 @@ public class TestLionKittensFood {
         Lion lion = new Lion("Самец", feline);
         lion.getFood();
         Mockito.verify(feline).getFood("Хищник");
-        Assert.assertEquals(lion.getFood(), feline.getFood("Хищник"));
+        Assert.assertEquals(feline.getFood("Хищник"), lion.getFood());
     }
 }
